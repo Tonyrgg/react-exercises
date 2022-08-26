@@ -4,7 +4,10 @@ export class Welcome extends React.Component {
     render() {
         return (
             <div>
-                <p>Hello, {this.props.name}</p>
+                {this.props.name == "John"
+                    ? <p>Hello, <b>{this.props.name}</b></p>
+                    : false
+                }
                 <Age age={this.props.age}/>
             </div>
         )
