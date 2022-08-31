@@ -1,38 +1,26 @@
 import React from "react";
 
+
 export class Counter extends React.Component {
     state = {
-        count: this.props.initialValue
+        count: 0
     }
-    
+
     constructor(props) {
         super(props)
 
-        this._interval = setInterval(() => {
+        setInterval(() => {
             this.setState((state) => {
                 return {
-                    count: state.count + (this.props.incrementBy)
+                    count: state.count + 1
                 }
             })
-        },this.props.timeout)
-    }
-
-    componentWillUnmount() {
-        if (this._interval) {
-            clearInterval(this._interval)
-        }
+        }, 1000)
     }
 
     render() {
-        return <div>
-            <h3>Count: {this.state.count}</h3>
-            {this.state.count < 6 && <p>This counter is great!</p>}
-        </div>
+        return <h1>{this.state.count}</h1>
     }
+
 }
 
-Counter.defaultProps = {
-    timeout: 1000,
-    incrementBy: 1,
-    initialValue: 0,
-}
