@@ -6,17 +6,15 @@ export class Counter extends React.Component {
         count: this.props.start
     }
 
-    constructor(props) {
-        super(props)
-
-        setInterval(() => {
-            this.setState((state) => {
-                return {
-                    count: state.count + this.props.increment
-                }
-            })
-        }, this.props.interval)
-    }
+        componentDidMount() {
+            setInterval(() => {
+                this.setState((state) => {
+                    return {
+                        count: state.count + this.props.increment
+                    }
+                })
+            }, this.props.interval)
+        }
 
     render() {
         return (
