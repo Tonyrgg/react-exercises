@@ -1,5 +1,5 @@
 import React from "react";
-import { CounterDisplay } from "./CounterDisplay";
+import { ClickCounter } from "./ClickCounter";
 
 export class Counter extends React.Component {
     state = {
