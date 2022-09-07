@@ -2,14 +2,19 @@ import React from "react";
 
 export class InteractiveWelcome extends React.Component {
 state = {
-    name: ''
+    name: '',
+    password: '',
+    remember: false,
 }
 
     changeinput = (event) =>  {
         const valore = event.target.value
+        const name = event.target.name
+        const type = event.target.type
+        const checked = event.target.checked
         
         this.setState({
-            name: valore
+            [name]: type === "checkbox" ? checked : valore,
         })
     }
 
@@ -21,17 +26,19 @@ state = {
                         value={this.state.name}
                         onChange={this.changeinput}
                     />
-
-                    <Welcome nome={this.state.name}/>
+                    <input 
+                        name="password"
+                        type="password"
+                        value={this.state.password}
+                        onChange={this.changeinput}
+                    />
+                    <input 
+                        name="remember"
+                        type="checkbox"
+                        checked={this.state.remember}
+                        onChange={this.changeinput}
+                    />
                 </div>
-        )
-    }
-}
-
-export class Welcome extends React.Component {
-    render() {
-        return(
-            <h1>Welcome, {this.props.nome}</h1>
         )
     }
 }
