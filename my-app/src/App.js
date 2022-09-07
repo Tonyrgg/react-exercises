@@ -8,7 +8,6 @@ export class App extends React.Component {
         return (
             <div>
                 <ClickTracker />
-                <Counter />
             </div>
         )
     }
