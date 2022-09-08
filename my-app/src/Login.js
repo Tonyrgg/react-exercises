@@ -15,7 +15,12 @@ state = {
         
         this.setState({
             [name]: type === "checkbox" ? checked : valore,
+
         })
+    }
+
+    onLogin = () => {
+    console.log(this.state.name, this.state.password, this.state.remember);
     }
 
     render() {
@@ -38,6 +43,7 @@ state = {
                         checked={this.state.remember}
                         onChange={this.changeinput}
                     />
+                    {this.state.name && this.state.password ? <button onClick={this.onLogin}>Login</button> : <button disabled>Login</button>} 
                 </div>
         )
     }
