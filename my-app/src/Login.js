@@ -23,6 +23,14 @@ state = {
     console.log(this.state.name, this.state.password, this.state.remember);
     }
 
+    resetAll = () => {
+        this.setState({
+            name: '',
+            password: '',
+            remember: false,
+        })
+    }
+
     render() {
         return (
                 <div>
@@ -43,7 +51,8 @@ state = {
                         checked={this.state.remember}
                         onChange={this.changeinput}
                     />
-                    {this.state.name && this.state.password ? <button onClick={this.onLogin}>Login</button> : <button disabled>Login</button>} 
+                    {this.state.name && this.state.password ? <button onClick={this.onLogin}>Login</button> : <button disabled>Login</button>}
+                    <button onClick={this.resetAll}>Reset</button> 
                 </div>
         )
     }
