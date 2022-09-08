@@ -1,6 +1,6 @@
 import React from "react";
 
-export class InteractiveWelcome extends React.Component {
+export class Login extends React.Component {
 state = {
     name: '',
     password: '',
