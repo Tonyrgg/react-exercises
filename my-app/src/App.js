@@ -1,5 +1,6 @@
 import React from "react";
 import { Login, UncontrolledLogin } from "./Login";
+import { Colors } from "./Mylist";
 
 
 export class App extends React.Component {
@@ -7,6 +8,7 @@ export class App extends React.Component {
         return (
             <div>
                 <UncontrolledLogin />
+                <Colors colori={["Rosso", "Verde", "Giallo"]}/>
             </div>
         )
     }
