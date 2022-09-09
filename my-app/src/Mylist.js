@@ -21,12 +21,13 @@ export class Todolist extends React.Component {
     addString = (event) => {
         event.preventDefault()
 
-        const stringa = event.target.elements.string.value
+        let stringa = event.target.elements.string.value
 
         this.setState({
             items: [...this.state.items, stringa],
         })
-
+        
+        event.target.elements.string.value = ''
     }
 
     render() {
