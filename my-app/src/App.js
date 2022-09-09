@@ -1,6 +1,6 @@
 import React from "react";
 import { Login, UncontrolledLogin } from "./Login";
-import { Colors } from "./Mylist";
+import { Todolist } from "./Mylist";
 
 const supercolori = [
     {name: "red", id: 1, color:"rosso"},
@@ -12,8 +12,7 @@ export class App extends React.Component {
     render() {
         return (
             <div>
-                <UncontrolledLogin />
-                <Colors colori={supercolori}/>
+                <Todolist />
             </div>
         )
     }
