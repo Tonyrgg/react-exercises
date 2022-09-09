@@ -30,6 +30,12 @@ export class Todolist extends React.Component {
         event.target.elements.string.value = ''
     }
 
+    resetState = () => {
+        this.setState({
+            items: [],
+        })
+    }
+
     render() {
         return(
             <div>
@@ -38,6 +44,7 @@ export class Todolist extends React.Component {
                 <button type="submit">Add</button>
                 </form>
                 <ul>{this.state.items.map(testo => <li>{testo}</li>)}</ul>
+                <button onClick={this.resetState}>Reset</button>
             </div>
         )
     }
