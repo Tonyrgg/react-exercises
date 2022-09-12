@@ -24,6 +24,9 @@ state = {
     }
 
     render() {
+        let stile = {
+            backgroundColor: this.state.password.length < 8 ? "red" : "green" 
+        }
         return (
                 <div>
                     <input
@@ -43,7 +46,7 @@ state = {
                         checked={this.state.remember}
                         onChange={this.changeinput}
                     />
-                    {this.state.name && this.state.password ? <button onClick={this.onLogin}>Login</button> : <button disabled>Login</button>} 
+                    {this.state.name && this.state.password ? <button style={stile} onClick={this.onLogin}>Login</button> : <button disabled>Login</button>} 
                 </div>
         )
     }
