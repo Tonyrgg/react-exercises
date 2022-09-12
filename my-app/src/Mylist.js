@@ -36,6 +36,12 @@ export class Todolist extends React.Component {
         })
     }
 
+    removeli = (item) => {
+          this.setState(back => ({
+              items: back.items.filter(elem => elem !== item)
+          }))
+    }
+
     render() {
         return(
             <div>
@@ -43,7 +49,7 @@ export class Todolist extends React.Component {
                 <input name="string" />
                 <button type="submit">Add</button>
                 </form>
-                <ul>{this.state.items.map(testo => <li>{testo}</li>)}</ul>
+                <ul>{this.state.items.map(testo => <div><li>{testo}</li> <button onClick={() => this.removeli(testo)}>Remove</button></div>)}</ul>
                 <button onClick={this.resetState}>Reset</button>
             </div>
         )
