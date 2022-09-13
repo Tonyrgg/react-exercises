@@ -2,6 +2,7 @@ import React from "react";
 import { Container } from "./Container";
 import { DisplayLanguage } from "./DisplayLanguage";
 import { LanguageContext } from "./LanguageContext";
+import { Welcome } from "./welcome";
 
 
 
@@ -20,11 +21,7 @@ export class App extends React.Component {
     render() {
         return (
             <div>
-                <LanguageContext.Provider value="">
-                    <Container title="titolo">
-                        <DisplayLanguage />
-                    </Container>
-                </LanguageContext.Provider>
+                <Welcome name="Piero"/>
             </div>
         )
     }
