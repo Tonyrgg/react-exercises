@@ -1,6 +1,10 @@
 import React from "react";
 
 export class UncontrolledLogin extends React.Component {
+    // this.setState({
+    //     [name]: type === "checkbox" ? checked : valore,
+    // })
+
     loginfn = (event) => {
         event.preventDefault()
 
