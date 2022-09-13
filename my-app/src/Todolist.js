@@ -49,7 +49,7 @@ export class Todolist extends React.Component {
                 <input name="string" />
                 <button type="submit">Add</button>
                 </form>
-                <ul>{this.props.render(this.state.items)}</ul>
+                <ul>{this.props.render(this.state.items, this.removeli)}</ul>
                 <button onClick={this.resetState}>Reset</button>
             </div>
         )

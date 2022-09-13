@@ -12,10 +12,10 @@ export class App extends React.Component {
                     <Message />
                 </Container>
                 <Todolist
-                render= {() => {
-
+                render= {(items, removeli) => {
+                        console.log("sodwo");
                     return (
-                        this.state.items.map(testo => <div><li>{testo}</li> <button onClick={() => this.removeli(testo)}>Remove</button></div>)
+                        items.map(testo => <div><li>{testo}</li> <button onClick={() => removeli(testo)}>Remove</button></div>)
                     )
                 }}
                 ></Todolist>
