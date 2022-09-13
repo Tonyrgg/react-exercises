@@ -3,25 +3,16 @@ import { Container } from "./Container";
 import { DisplayLanguage } from "./DisplayLanguage";
 import { LanguageContext } from "./LanguageContext";
 import { Welcome } from "./welcome";
+import { Sum } from "./Sum";
 
 
 
 export class App extends React.Component {
 
-    state = {
-        language: "en"
-    }
-
-    cambioLingua = (event) => {
-        this.setState({
-            language: event.target.value
-        })
-    }
-
     render() {
         return (
             <div>
-                <Welcome name="Piero"/>
+                <Sum numbers={[2, 5, 8, 10]} />
             </div>
         )
     }
