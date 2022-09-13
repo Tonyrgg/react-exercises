@@ -56,8 +56,6 @@ export class Todolist extends React.Component {
     }
 }
 
-// {this.state.items.map(testo => <div><li>{testo}</li> <button onClick={() => this.removeli(testo)}>Remove</button></div>)}
-
 // Modificare il componente TodoList in modo che, invece di eseguire il rendering dell'array items all'interno del tag ul,
 // chiami la funzione passata al suo render prop, passandogli l'array items come parametro, così come la funzione richiesta per eliminare l'elemento.
 // Passa un prop di rendering al componente TodoList per eseguire correttamente il rendering e interagire con l'array di elementi.

@@ -1,24 +1,30 @@
 import React from "react";
 import { Container } from "./Container";
-import { Message } from "./Message";
-import { Todolist } from "./Todolist";
+import { DisplayLanguage } from "./DisplayLanguage";
+import { LanguageContext } from "./LanguageContext";
+
 
 
 export class App extends React.Component {
+
+    state = {
+        language: "en"
+    }
+
+    cambioLingua = (event) => {
+        this.setState({
+            language: event.target.value
+        })
+    }
+
     render() {
         return (
             <div>
-                <Container title="titolo">
-                    <Message />
-                </Container>
-                <Todolist
-                render= {(items, removeli) => {
-                        console.log("sodwo");
-                    return (
-                        items.map(testo => <div><li>{testo}</li> <button onClick={() => removeli(testo)}>Remove</button></div>)
-                    )
-                }}
-                ></Todolist>
+                <LanguageContext.Provider value="">
+                    <Container title="titolo">
+                        <DisplayLanguage />
+                    </Container>
+                </LanguageContext.Provider>
             </div>
         )
     }
