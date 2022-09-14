@@ -1,31 +1,16 @@
-import React from "react";
-import { CounterDisplay } from "./CounterDisplay";
+import React, { useState } from "react";
 
-export class Counter extends React.Component {
-    state = {
-        count: this.props.initialValue
+export function Counter({initialValue, increment}) {
+    const [counter, setCounter] = useState(initialValue)
+
+    function CounterIt() {
+        setCounter(counter => counter + increment)
     }
 
-    Increment = () => {
-        this.setState(state => {
-            return {
-                count: state.count + this.props.incrementBy
-            }
-        })
-    }
-
-    render() {
-        return (
-            <div>
-                <h3>Count: {this.state.count}</h3>
-                <button onClick={this.Increment}>Increment</button>
-            </div>
-            )
-    }
+    return( 
+        <div>
+            <h2>Counter: {counter}</h2>
+            <button onClick={CounterIt}>ADD</button>
+        </div>
+    )
 }
-
-Counter.defaultProps = {
-    initialValue: 0,
-    incrementBy: 1,
-}
-
