@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export function Counter({initialValue, increment}) {
     const [counter, setCounter] = useState(initialValue)
 
     function CounterIt() {
-        setCounter(counter => counter + increment)
+        setCounter(asd => asd + increment)
     }
+
+    useEffect(() => {
+        console.log(`Il counter è: ${counter}` );
+    }, [counter]);
 
     return( 
         <div>
