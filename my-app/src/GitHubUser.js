@@ -16,7 +16,7 @@ const [data, setdata] = useState(null)
     }, [username]);
 
     return <div>{data && <div>
-            <h1>{data.name}</h1>
+            <h1>{data.login}</h1>
             { data.bio ? <p>{data.bio}</p> : "no bio" }
         </div>}</div>
 }
