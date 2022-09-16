@@ -1,22 +1,14 @@
-import React, { useEffect, useState } from "react";
+import { useCounter } from "./useCounter"
 
-export function Counter({initialValue, increment}) {
-    const [counter, setCounter] = useState(initialValue)
+export function Counter() {
+    const {piu, meno, reset, counter} = useCounter(0)
 
-    useEffect(() => {        
-        let rocco = setInterval(() => {
-                        setCounter(counter => counter + increment)
-                    }, 1000);
-
-        return function cleanup() {
-            clearInterval(rocco)
-        }
-
-    }, []);
-
-    return( 
+    return (
         <div>
-            <h2>Counter: {counter}</h2>
+            <h2>{counter}</h2>
+            <button onClick={piu}>Piu</button>
+            <button onClick={meno}>meno</button>
+            <button onClick={reset}>Reset</button>
         </div>
     )
 }

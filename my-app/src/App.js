@@ -1,12 +1,16 @@
 import { useState } from "react";
 import { GitHubUser } from "./GitHubUser";
 import { GitHubUserList } from "./GitHubUserList";
+import { Counter } from "./Counter";
 
 
 export function App() {
+
+
+    
         return (
             <div>
-                <GitHubUserList lista={['Tonyrgg', 'Riccardo1091','MarcoSpicuzza']}/>
+                <Counter />
             </div>
         )
 }
