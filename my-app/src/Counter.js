@@ -1,16 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export function Counter({initialValue, increment}) {
     const [counter, setCounter] = useState(initialValue)
 
-    function CounterIt() {
-        setCounter(counter => counter + increment)
-    }
+    useEffect(() => {        
+        let rocco = setInterval(() => {
+                        setCounter(counter => counter + increment)
+                    }, 1000);
+
+        return function cleanup() {
+            clearInterval(rocco)
+        }
+
+    }, []);
 
     return( 
         <div>
             <h2>Counter: {counter}</h2>
-            <button onClick={CounterIt}>ADD</button>
         </div>
     )
 }

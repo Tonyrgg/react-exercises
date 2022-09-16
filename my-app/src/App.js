@@ -1,13 +1,21 @@
-import React from "react";
+import { useState } from "react";
 import { Counter } from "./Counter";
 
 
-export class App extends React.Component {
-    render() {
+export function App() {
+
+    const [stato, cambiastato] = useState(true)
+
+    function ginostato() {
+        cambiastato(
+            interruttore => !interruttore 
+        ) 
+    }
+
         return (
             <div>
-                <Counter initialValue={16} increment={3}/>
+                {stato && <Counter initialValue={16} increment={3}/>}
+                <button onClick={ginostato}>ON/OFF</button>
             </div>
         )
-    }
 }
