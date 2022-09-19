@@ -43,7 +43,7 @@ state = {
                         checked={this.state.remember}
                         onChange={this.changeinput}
                     />
-                    {this.state.name && this.state.password ? <button onClick={this.onLogin}>Login</button> : <button disabled>Login</button>} 
+                    {this.state.name && this.state.password ? <button disabled={false} onClick={this.onLogin}>Login</button> : <button disabled={true}>Login</button>} 
                 </div>
         )
     }
