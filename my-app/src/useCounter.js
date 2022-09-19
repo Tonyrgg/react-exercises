@@ -1,19 +1,19 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 export function useCounter({initialValue = 0}) {
     const [counter, setCounter] = useState(initialValue)
 
-    function piu() {
+    const piu = useCallback( function piu() {
         setCounter((c) => c + 1)
-    }
+    }, [])
 
-    function meno() {
+    const meno = useCallback(function meno() {
         setCounter((c) => c - 1)
-    }
+    }, [])
 
-    function reset() {
+    const reset = useCallback(function reset() {
         setCounter((c) => c = initialValue)
-    }
+    },[initialValue])
 
     return {piu, meno, reset, counter}
 }
