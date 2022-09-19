@@ -1,19 +1,17 @@
-import React from "react";
-import { Login, UncontrolledLogin } from "./Login";
-import { Todolist } from "./Mylist";
+import { Filteredlist } from "./FilteredList"
 
-const supercolori = [
-    {name: "red", id: 1, color:"rosso"},
-    {name: "green", id: 2, color: "verde"},
-    {name: "yellow", id: 3, color: "giallo"},
+let lista = [
+    {id:1, name: "paolo", age: 20},
+    {id:2, name: "luca", age: 83},
+    {id:3, name: "carlo", age: 14},
+    {id:4, name: "claudio", age: 12},
+    {id:5, name: "lucia", age: 23}
 ]
 
-export class App extends React.Component {
-    render() {
+export function App() {
         return (
             <div>
-                <Todolist />
+                <Filteredlist lista={lista}/>
             </div>
         )
-    }
 }
