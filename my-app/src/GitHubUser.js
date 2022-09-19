@@ -3,10 +3,18 @@ import { useGitHubUser } from "./useGitHubUser";
 
 export function GitHubUser({user}) {
 
-    const { utente } = useGitHubUser(user)
+    const { utente, loading, errore, FetchThis } = useGitHubUser(user)
 
-    return <div>{utente.login && <div>
-            <h1>{utente.login}</h1>
-            { utente.bio ? <p>{utente.bio}</p> : "no bio" }
-        </div>}</div>
+    function handleGetData() {
+        FetchThis(user)
+    }
+
+    return (
+        <div>
+            <button onClick={handleGetData}>Load data</button>
+            {loading && <h1>Loading...</h1>}
+            {errore && <h1>C'è un errore</h1>}
+            {utente && <div><h1>{utente.login}</h1><p>{utente.bio}</p></div>}
+        </div>
+    )
 }
