@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { Route, Routes } from "react-router-dom"
 import { GitHubUser } from "./GitHubUser";
 
 
 export function App() {
         return (
-            <div>
-                <GitHubUser username={"Tonyrgg"}/>
-            </div>
+            <Routes>
+                <Route path="/:username" element={<GitHubUser username={"Tonyrgg"}/>}/>
+            </Routes>
         )
 }
