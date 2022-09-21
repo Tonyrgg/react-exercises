@@ -20,7 +20,7 @@ export class Clock extends React.Component {
         return <div>{this.state.date.toLocaleTimeString()}
         <Link to="/counter">Go counter</Link>
         <Link to="/welcome">Go welcome</Link>
-        <Link to="/githubuser:username">Go githubuser</Link>
+        {/* <Link to="/githubuser:username">Go githubuser</Link> */}
         </div>
     }
 }
