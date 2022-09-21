@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom"
+
 
 export class Welcome extends React.Component {
     render() {
@@ -22,6 +24,9 @@ export class Age extends React.Component {
                     ? <p>Your age is {this.props.age}</p>
                     : <p>You are very young!</p>
                 }
+                <Link to="/counter">Go counter</Link>
+                <Link to="/">Go home</Link>
+                <Link to="/githubuser:username">Go githubuser</Link>
             </div>
         )
     }

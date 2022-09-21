@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"
 
 export class Clock extends React.Component {
     state = {
@@ -16,6 +17,10 @@ export class Clock extends React.Component {
     }
 
     render() {
-        return <div>{this.state.date.toLocaleTimeString()}</div>
+        return <div>{this.state.date.toLocaleTimeString()}
+        <Link to="/counter">Go counter</Link>
+        <Link to="/welcome">Go welcome</Link>
+        <Link to="/githubuser:username">Go githubuser</Link>
+        </div>
     }
 }

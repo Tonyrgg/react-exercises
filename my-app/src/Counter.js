@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom"
+
 
 export function Counter({initialValue, increment}) {
     const [counter, setCounter] = useState(initialValue)
@@ -17,6 +19,9 @@ export function Counter({initialValue, increment}) {
     return( 
         <div>
             <h2>Counter: {counter}</h2>
+            <Link to="/">Go home</Link>
+            <Link to="/welcome">Go welcome</Link>
+            <Link to="/githubuser:username">Go githubuser</Link>
         </div>
     )
 }
