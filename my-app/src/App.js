@@ -1,13 +1,14 @@
 import React from "react";
 import { Counter } from "./Counter";
+import { Welcome } from "./welcome";
+import { Route, Routes } from "react-router-dom"
 
 
-export class App extends React.Component {
-    render() {
-        return (
-            <div>
-                <Counter initialValue={16} increment={3}/>
-            </div>
-        )
-    }
+export function App() {
+    return (
+        <Routes>
+            <Route path="/" element={<Welcome name={"Paolo"}/>} />
+            <Route path="counter" element={<Counter initialValue={0} increment={3}/>} />
+        </Routes>
+    )
 }
