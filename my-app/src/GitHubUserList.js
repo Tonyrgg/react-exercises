@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { GitHubUser } from "./GitHubUser"
+import { Link } from "react-router-dom"
 
 export function GitHubUserList({ lista }) {
 
@@ -17,7 +18,7 @@ export function GitHubUserList({ lista }) {
             <form onSubmit={handleSubmit}>
                 <input name="username"/>
                 <button type="submit">Aggiungi utente</button>
-                <ul>{utenti.map(item => <li><GitHubUser username={item}/></li>)}</ul>
+                <ul>{utenti.map(item => <Link to={item}>Go {item}</Link>)}</ul>
             </form>
         </div>
     )
