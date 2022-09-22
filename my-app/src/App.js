@@ -9,6 +9,7 @@ export function App() {
         return (
             <Routes>
                 <Route path="/users" element={<div><GitHubUserList lista={['Tonyrgg', 'Riccardo1091','MarcoSpicuzza']}/><hr/><Outlet /></div>}>
+                <Route index element={<p>Select a user</p>} />
                     <Route path=":username" element={<ShowGithubUser />} />
                 </Route>
             </Routes>

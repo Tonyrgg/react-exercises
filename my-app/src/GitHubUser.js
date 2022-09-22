@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom"
+
 
 
 export function GitHubUser({username}) {
@@ -18,5 +20,6 @@ const [data, setdata] = useState(null)
     return <div>{data && <div>
             <h1>{data.login}</h1>
             { data.bio ? <p>{data.bio}</p> : "no bio" }
-        </div>}</div>
+        </div>}
+        <Link to="/users">Back to users</Link> </div>
 }
