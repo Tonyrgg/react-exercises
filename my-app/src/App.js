@@ -5,7 +5,7 @@ export function App() {
     
         return (
             <div>
-                <GitHubUser user='Tonyrgg' />
+                <GitHubUser username="Tonyrgg" />
             </div>
         )
 }

@@ -1,12 +1,15 @@
 import { useGitHubUser } from "./useGitHubUser";
 
 
-export function GitHubUser({user}) {
+export function GitHubUser({username}) {
 
-    const { utente } = useGitHubUser(user)
+    const { utente, feccialo } = useGitHubUser(username)
 
-    return <div>{utente.login && <div>
+
+    return (
+    <div>
+            <button onClick={feccialo}>Fetch</button>
             <h1>{utente.login}</h1>
-            { utente.bio ? <p>{utente.bio}</p> : "no bio" }
-        </div>}</div>
+            <h1>{utente.bio}</h1>
+        </div> )
 }
